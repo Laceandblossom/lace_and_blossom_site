@@ -1,49 +1,18 @@
 import React from "react";
-import Carousel from "styled-components-carousel";
 import TestimonialCard from "./TestimonialCard";
 import styled from "styled-components";
 
 const Testimonials = () => {
   return (
     <Reviews>
+      <h2> People said... </h2>
+
       <section>
-        <h2> People said... </h2>
-        <Carousel
-          breakpoints={[
-            {
-              size: 200,
-              settings: {
-                slidesToShow: 1,
-                showArrows: true,
-                showIndicator: false,
-                swipeable: true,
-              },
-            },
-            {
-              size: 600,
-              settings: {
-                slidesToShow: 3,
-                showArrows: true,
-                showIndicator: true,
-                swipeable: true,
-                scaleOnFocus: 1,
-              },
-            },
-            {
-              size: 1000,
-              settings: {
-                slidesToShow: 3,
-                showArrows: true,
-                showIndicator: true,
-                swipeable: true,
-              },
-            },
-          ]}
-        >
+        <div className="reviews">
           <TestimonialCard />
           <TestimonialCard />
           <TestimonialCard />
-        </Carousel>
+        </div>
       </section>
     </Reviews>
   );
@@ -60,6 +29,19 @@ const Reviews = styled.section`
   section {
     max-width: 1170px;
     margin: auto;
+    .reviews {
+      align-items: center;
+      margin: auto;
+      display: inline-grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    section {
+      .reviews {
+        grid-template-columns: 1fr;
+      }
+    }
   }
 `;
 

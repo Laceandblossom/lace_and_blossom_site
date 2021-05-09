@@ -2,13 +2,16 @@ import React from "react";
 import styled from "styled-components";
 import logo from "../images/logo.svg";
 import arrows from "../images/arrows.svg";
+import { Link } from "gatsby";
 
 const Header = () => {
   return (
     <NavHeader>
       <div className="header-container">
         <div className="logo">
-          <img src={logo} alt="brand logo" />
+          <Link to="/">
+            <img src={logo} alt="brand logo" />
+          </Link>
         </div>
         <div className="arrows">
           <img src={arrows} alt="scroll down icon" />

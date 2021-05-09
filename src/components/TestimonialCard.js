@@ -21,7 +21,7 @@ const Card = styled.article`
   background-color: var(--dark-gray);
   color: var(--main-white);
   border-radius: 1rem;
-  margin: 1rem;
+  margin: 0.5rem;
   padding: 2rem 1rem;
 `;
 
