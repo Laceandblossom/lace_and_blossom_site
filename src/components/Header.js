@@ -13,7 +13,12 @@ const Header = () => {
             <img src={logo} alt="brand logo" />
           </Link>
         </div>
-        <div className="arrows">
+        <div
+          className="arrows"
+          data-sal="slide-down"
+          data-sal-delay="150"
+          data-sal-easing="ease"
+        >
           <img src={arrows} alt="scroll down icon" />
         </div>
       </div>
@@ -44,14 +49,15 @@ const NavHeader = styled.section`
       display: flex;
       justify-content: center;
       flex-direction: column;
-      height: 88%;
+      height: 80%;
     }
     .arrows {
-      height: 12%;
+      height: 20%;
       display: flex;
       align-items: center;
       flex-direction: column;
       text-align: center;
+      opacity: 0.8;
     }
   }
 `;

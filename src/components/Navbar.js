@@ -103,7 +103,8 @@ const Hamburger = styled.div`
   transform: ${(props) => (props.open ? "rotate(-45deg)" : "inherit")};
   z-index: 2;
   top: 0;
-  margin-top: 1.2rem;
+  margin-top: 2rem;
+  margin-left: 1.5rem;
 
   ::before,
   ::after {
