@@ -1,0 +1,86 @@
+/* import { createGlobalStyle } from "styled-components";
+import { setColor, setFont } from "../../styles"; */
+
+@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Lato:wght@400;700&display=swap");
+
+:root {
+  // ===  V A R I A B L E S  === //
+  // COLORS
+  --main-white: rgb(247, 248, 250, 1);
+  --main-black: rgb(15, 22, 36, 1);
+  --text-color: rgb(61, 67, 65, 1);
+  --brand-color: rgb(224, 218, 220, 1);
+  --dark-gray: rgb(88, 97, 96, 1);
+
+  // FONTS
+  --main-font: "Apple SD Gothic Neo", "Open Sans", Geneva, Verdana, sans-serif;
+  --title-font: "Playfair Display";
+  //   --slanted-font: "'Courgette', cursive";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 100%;
+  color: var(--text-color);
+  background: var(--main-white);
+  font-family: var(--main-font);
+
+  h1 {
+    font-size: 3em;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+    font-family: var(--title-font);
+    letter-spacing: 0.2rem;
+    word-spacing: 0.4rem;
+  }
+  h2 {
+    font-size: 2em;
+    margin-bottom: 0.75em;
+    font-family: var(--title-font);
+    letter-spacing: 0.2rem;
+    word-spacing: 0.4rem;
+  }
+  h3 {
+    font-size: 1.5em;
+    line-height: 1;
+    margin-bottom: 1em;
+    font-family: var(--title-font);
+    letter-spacing: 0.2rem;
+    word-spacing: 0.4rem;
+  }
+  h4 {
+    font-size: 1.2em;
+    line-height: 1.2;
+    margin-bottom: 1.25em;
+    font-weight: bold;
+    font-family: var(--title-font);
+    letter-spacing: 0.2rem;
+    word-spacing: 0.4rem;
+  }
+  h5 {
+    font-size: 1em;
+    margin-bottom: 1.5em;
+    font-weight: bold;
+    font-family: var(--title-font);
+    letter-spacing: 0.2rem;
+    word-spacing: 0.4rem;
+  }
+  h6 {
+    font-size: 1em;
+    font-weight: bold;
+    font-family: var(--title-font);
+    letter-spacing: 0.2rem;
+    word-spacing: 0.4rem;
+  }
+  p {
+    line-height: 1.5em;
+    margin: 0 0 1.5rem 0;
+    letter-spacing: 0.2rem;
+    word-spacing: 0.4rem;
+  }
+}
