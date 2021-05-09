@@ -27,7 +27,7 @@ const Reviews = styled.section`
     text-align: center;
   }
   section {
-    max-width: 1170px;
+    width: 100vw;
     margin: auto;
     .reviews {
       align-items: center;
