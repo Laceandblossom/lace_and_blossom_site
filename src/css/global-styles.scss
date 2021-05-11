@@ -3,6 +3,8 @@ import { setColor, setFont } from "../../styles"; */
 
 @import url("https://fonts.googleapis.com/css2?family=Courgette&family=Lato:wght@400;700&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap");
+
 :root {
   // ===  V A R I A B L E S  === //
   // COLORS
@@ -15,7 +17,7 @@ import { setColor, setFont } from "../../styles"; */
   // FONTS
   --main-font: "Apple SD Gothic Neo", "Open Sans", Geneva, Verdana, sans-serif;
   --title-font: "Playfair Display";
-  //   --slanted-font: "'Courgette', cursive";
+  --styled-font: "Mrs Saint Delafield", cursive;
 }
 
 * {

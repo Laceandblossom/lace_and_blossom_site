@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { SubTitle } from "../components/styles/Styles";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 
@@ -26,7 +27,7 @@ const FeatureProducts = () => {
 
   return (
     <Products>
-      <h2>New Arrivals</h2>
+      <SubTitle>New Arrivals</SubTitle>
       <div className="product-images">
         {nodes.map((image, index) => {
           const pathToImage = getImage(image);
@@ -49,6 +50,12 @@ const Products = styled.section`
   margin: 3rem auto;
   max-width: 1170px;
 
+  h2 {
+    font-family: var(--styled-font);
+    font-size: 4rem;
+    margin-bottom: 0rem;
+  }
+
   .product-images {
     display: inline-grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -59,7 +66,7 @@ const Products = styled.section`
     }
   }
   @media screen and (max-width: 768px) {
-    h3 {
+    h2 {
       margin: 0rem;
     }
     .product-images {

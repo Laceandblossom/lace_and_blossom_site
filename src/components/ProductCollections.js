@@ -82,11 +82,13 @@ const Collections = styled.section`
 
         .text {
           color: var(--main-white);
+          font-weight: normal;
           margin: auto;
           width: 80%;
           text-align: center;
           text-transform: uppercase;
           line-height: 2rem;
+          font-family: var(--main-font);
         }
       }
     }

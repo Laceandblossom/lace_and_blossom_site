@@ -1,13 +1,15 @@
 import React from "react";
 import Layout from "../components/Layout";
 import styled from "styled-components";
+import { PageHeading } from "../components/styles/Styles";
+
 import ProductCollections from "../components/ProductCollections";
 
 const Collections = () => {
   return (
     <Layout>
       <CollectionPage>
-        <h1>Collections</h1>
+        <PageHeading>Collections</PageHeading>
         <ProductCollections />
       </CollectionPage>
     </Layout>

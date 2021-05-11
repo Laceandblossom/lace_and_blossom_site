@@ -1,12 +1,13 @@
 import React from "react";
 import Layout from "../components/Layout";
 import styled from "styled-components";
+import { PageHeading } from "../components/styles/Styles";
 
 const BestSellers = () => {
   return (
     <Layout>
       <Best>
-        <h1>Best Sellers</h1>
+        <PageHeading>Best Sellers</PageHeading>
       </Best>
     </Layout>
   );

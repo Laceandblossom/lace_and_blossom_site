@@ -31,12 +31,14 @@ const NavItems = styled.nav`
   margin: auto;
   ul {
     text-align: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: flex;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
     margin: auto;
     width: 65vw;
+    text-transform: uppercase;
     li {
       padding: 2rem 0px;
+      flex-grow: 2;
       font-size: 1.4rem;
       list-style: none;
       a {
@@ -59,7 +61,8 @@ const NavItems = styled.nav`
   @media (max-width: 768px) {
     height: 0px;
     ul {
-      grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: column;
     }
   }
 `;

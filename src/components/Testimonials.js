@@ -1,11 +1,12 @@
 import React from "react";
 import TestimonialCard from "./TestimonialCard";
 import styled from "styled-components";
+import { SubTitle } from "../components/styles/Styles";
 
 const Testimonials = () => {
   return (
     <Reviews>
-      <h2> People said... </h2>
+      <SubTitle> People said... </SubTitle>
 
       <section>
         <div className="reviews">
@@ -22,10 +23,8 @@ const Reviews = styled.section`
   background-color: var(--brand-color);
   margin: 3rem auto;
   padding: 3rem 0rem;
+  text-align: center;
 
-  h2 {
-    text-align: center;
-  }
   section {
     width: 100vw;
     margin: auto;

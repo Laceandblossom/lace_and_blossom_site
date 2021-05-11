@@ -34,7 +34,7 @@ const Wrapper = styled.footer`
     margin: 0.8rem auto;
     text-align: center;
     text-transform: uppercase;
-
+    font-size: 1.2rem;
     a {
       color: var(--text-color);
       &:link {
