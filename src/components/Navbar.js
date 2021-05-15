@@ -29,10 +29,10 @@ const Navbar = () => {
 const NavItems = styled.nav`
   max-width: 1170px;
   margin: auto;
+
   ul {
     text-align: center;
     display: flex;
-    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
     margin: auto;
     width: 65vw;
     text-transform: uppercase;

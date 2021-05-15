@@ -15,7 +15,11 @@ const SocialShowcase = () => {
         <div className="text">
           <h4>Contact and follow me on Instagram:</h4>
           <h4>
-            <strong>@Laceandblossom</strong>
+            <strong>
+              <a href="https://www.instagram.com/laceandblossom_/?hl=en">
+                @laceandblossom_
+              </a>
+            </strong>
           </h4>
         </div>
       </div>
@@ -29,7 +33,6 @@ const Social = styled.section`
   display: grid;
   padding: 3rem 0rem;
   grid-template-columns: 3fr 1fr;
-  /* height: 30rem; */
   .info {
     .brand-text {
       margin-top: 3rem;
@@ -37,19 +40,32 @@ const Social = styled.section`
       padding-left: 1rem;
     }
     .text {
-      /* position: relative; */
       width: 70vw;
       padding: 3rem 0rem 0rem 2rem;
       p,
       h4 {
         font-family: "Apple SD Gothic Neo";
-        text-transform: uppercase;
         color: var(--text-color);
+        a {
+        color: var(--text-color);
+        &:link {
+          text-decoration: none;
+        }
+        &:hover {
+          text-decoration: underline;
+        }
+        &:active {
+          text-decoration: underline;
+        }
+        &:visited {
+          text-decoration: none;
+        }
+      }
+    }
       }
     }
   }
   .gram-logo {
-    /* position: absolute; */
     width: 25vw;
     right: 0px;
     max-height: 25rem;
@@ -70,7 +86,7 @@ const Social = styled.section`
           margin-top: 0.2rem;
           font-size: 1em;
         }
-      }
+      }}
     }
   }
 `;

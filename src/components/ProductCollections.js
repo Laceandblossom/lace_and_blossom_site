@@ -26,6 +26,26 @@ const query = graphql`
         )
       }
     }
+    frame: file(relativePath: { eq: "collections/picture-frame.png" }) {
+      childImageSharp {
+        gatsbyImageData(
+          height: 400
+          width: 400
+          layout: CONSTRAINED
+          placeholder: BLURRED
+        )
+      }
+    }
+    personal: file(relativePath: { eq: "collections/personal-gifts.png" }) {
+      childImageSharp {
+        gatsbyImageData(
+          height: 400
+          width: 400
+          layout: CONSTRAINED
+          placeholder: BLURRED
+        )
+      }
+    }
   }
 `;
 
@@ -33,6 +53,9 @@ const ProductCollections = () => {
   const data = useStaticQuery(query);
   const image_1 = getImage(data.boxes);
   const image_2 = getImage(data.seasonal);
+  const image_3 = getImage(data.frame);
+  const image_4 = getImage(data.personal);
+
   return (
     <Collections>
       <div className="collection-cards">
@@ -43,9 +66,21 @@ const ProductCollections = () => {
           </div>
         </div>
         <div className="collection">
-          <GatsbyImage image={image_2} alt="box gifts" />
+          <GatsbyImage image={image_2} alt="seasonal gifts" />
           <div className="overlay">
             <h3 className="text">Seasonal & Custom Made Presents</h3>
+          </div>
+        </div>
+        <div className="collection">
+          <GatsbyImage image={image_3} alt="picture frames" />
+          <div className="overlay">
+            <h3 className="text">Picture Frames</h3>
+          </div>
+        </div>
+        <div className="collection">
+          <GatsbyImage image={image_4} alt="Personalised Gifts" />
+          <div className="overlay">
+            <h3 className="text">Personalised Gifts</h3>
           </div>
         </div>
       </div>
@@ -55,17 +90,20 @@ const ProductCollections = () => {
 
 const Collections = styled.section`
   max-width: 1170px;
-  margin: 3rem auto;
+  margin: auto;
+  text-align: center;
 
   .collection-cards {
     display: inline-grid;
     grid-template-columns: 1fr 1fr;
-    width: 100%;
+    align-items: center;
 
     .collection {
       margin: auto;
       position: relative;
       cursor: pointer;
+      margin: 0.5rem;
+
       .overlay {
         position: absolute;
         width: 100%;

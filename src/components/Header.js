@@ -4,9 +4,9 @@ import logo from "../images/logo.svg";
 import arrows from "../images/arrows.svg";
 import { Link } from "gatsby";
 
-const Header = () => {
+const Header = ({ path }) => {
   return (
-    <NavHeader>
+    <NavHeader path={path}>
       <div className="header-container">
         <div className="logo">
           <Link to="/">
@@ -43,7 +43,7 @@ const NavHeader = styled.section`
   }
   @media (max-width: 768px) {
     .header-container {
-      height: 100vh;
+      height: 70vh;
     }
     .logo {
       display: flex;
