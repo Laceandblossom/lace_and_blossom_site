@@ -41,10 +41,11 @@ const About = styled.section`
   @media screen and (max-width: 501px) {
     margin: 0px;
     margin-top: 3rem;
+    padding: 1rem;
+
     p {
       width: 95vw;
       margin: auto;
-      padding: 0px;
     }
   }
 `;

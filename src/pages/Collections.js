@@ -15,8 +15,6 @@ const Collections = () => {
   );
 };
 
-const CollectionPage = styled.section`
-  margin: 3rem;
-`;
+const CollectionPage = styled.section``;
 
 export default Collections;

@@ -39,7 +39,6 @@ const Best = () => {
             </div>
           );
         })}
-        {/* <GatsbyImage image={image_1} alt="box gifts" /> */}
       </div>
       ;
     </BestOf>

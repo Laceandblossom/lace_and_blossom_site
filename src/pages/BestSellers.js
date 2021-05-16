@@ -18,7 +18,7 @@ const BestSellers = () => {
 const Popular = styled.section`
   margin: 3rem;
   @media screen and (max-width: 501px) {
-    margin-left: 1rem;
+    margin: 2rem 1rem;
   }
 `;
 

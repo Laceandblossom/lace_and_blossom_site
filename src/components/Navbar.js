@@ -29,6 +29,7 @@ const Navbar = () => {
 const NavItems = styled.nav`
   max-width: 1170px;
   margin: auto;
+  background-color: ${({ path }) => (path === "/" ? "#fff" : "#000")};
 
   ul {
     text-align: center;
@@ -88,7 +89,7 @@ const Navbox = styled.div`
     padding-top: 10vh;
     background-color: #fff;
     font-size: 5vh;
-    z-index: 0;
+    z-index: 2;
     top: 0;
     transition: all 0.3s ease-in;
     left: ${(props) => (props.open ? "-100%" : "0")};
@@ -104,7 +105,7 @@ const Hamburger = styled.div`
   display: block;
   position: absolute;
   transform: ${(props) => (props.open ? "rotate(-45deg)" : "inherit")};
-  z-index: 2;
+  z-index: 3;
   top: 0;
   margin-top: 2rem;
   margin-left: 1.5rem;

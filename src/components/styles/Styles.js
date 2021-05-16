@@ -4,12 +4,12 @@ export const PageHeading = styled.h1`
   font-family: var(--styled-font);
   font-size: 20vw;
   color: var(--text-color);
-  padding-left: 1vw;
-  width: 100vw;
+  width: 90vw;
   margin-bottom: 1rem;
   /* line-height: 70%; */
   @media (max-width: 501px) {
-    padding-left: 0px;
+    text-align: center;
+    margin-top: 3rem;
   }
 `;
 
