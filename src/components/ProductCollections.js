@@ -121,6 +121,11 @@ const Collections = styled.section`
       font-family: var(--main-font);
     }
   }
+  @media (max-width: 650px) {
+    .text {
+      font-size: 1rem;
+    }
+  }
 `;
 
 export default ProductCollections;
