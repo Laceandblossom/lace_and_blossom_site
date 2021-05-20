@@ -43,14 +43,14 @@ export const ImageLayout = styled.div`
       }
     }
   }
-  @media screen and (max-width: 768px) {
+  /* @media screen and (max-width: 768px) {
     .collection-cards {
       grid-template-columns: 1fr 1fr;
       .collection {
         margin-top: 1rem;
       }
     }
-  }
+  } */
   @media screen and (max-width: 501px) {
     .collection-cards {
       grid-template-columns: 1fr;
