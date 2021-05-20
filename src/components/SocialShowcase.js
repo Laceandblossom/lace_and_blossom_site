@@ -67,11 +67,11 @@ const Social = styled.section`
   }
   .gram-logo {
     width: 25vw;
-    right: 0px;
+    /* right: 5px; */
     max-height: 25rem;
   }
   @media (max-width: 768px) {
-    padding: 1.5rem 0rem;
+    /* padding: 1.5rem auto; */
 
     .info {
       .brand-text {
@@ -87,8 +87,8 @@ const Social = styled.section`
           font-size: 1em;
         }
       }}
-    }
-  }
+
+
 `;
 
 export default SocialShowcase;

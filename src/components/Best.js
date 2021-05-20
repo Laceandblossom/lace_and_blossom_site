@@ -33,13 +33,12 @@ const Best = () => {
         <div className="collection-cards">
           {items.map((item, index) => {
             return (
-              <div className="collection">
-                <GatsbyImage
-                  image={getImage(item.childImageSharp.gatsbyImageData)}
-                  key={index}
-                  alt="box gifts"
-                />
-              </div>
+              <GatsbyImage
+                image={getImage(item.childImageSharp.gatsbyImageData)}
+                key={index}
+                alt="box gifts"
+                className="collection"
+              />
             );
           })}
         </div>
