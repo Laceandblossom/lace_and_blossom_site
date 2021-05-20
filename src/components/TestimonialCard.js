@@ -5,8 +5,9 @@ const TestimonialCard = () => {
   return (
     <Card>
       <p>
-        I love my hug in a box! It arrived in a few days and I was pleased with
-        the quality would recomend it to any one.
+        <span className="quotation-marks"> " </span> I love my hug in a box! It
+        arrived in a few days and I was pleased with the quality would recomend
+        it to any one.<span className="quotation-marks"> " </span>
       </p>
       <p>
         <strong>
@@ -23,6 +24,10 @@ const Card = styled.article`
   border-radius: 1rem;
   margin: 0.5rem;
   padding: 2rem 1rem;
+
+  .quotation-marks {
+    font-size: 1.5rem;
+  }
 `;
 
 export default TestimonialCard;

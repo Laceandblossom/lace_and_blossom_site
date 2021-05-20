@@ -34,10 +34,16 @@ const AboutMe = () => {
 const About = styled.section`
   margin: 3rem;
   p {
-    width: 70vw;
+    width: 65vw;
     margin: auto;
     padding: 1rem;
   }
+  @media screen and (max-width: 768px) {
+    p {
+      width: 80vw;
+    }
+  }
+
   @media screen and (max-width: 501px) {
     margin: 0px;
     margin-top: 3rem;

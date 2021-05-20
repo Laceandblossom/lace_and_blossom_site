@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { ImageLayout } from "../components/styles/GridLayout";
 
 const query = graphql`
   {
@@ -58,32 +59,34 @@ const ProductCollections = () => {
 
   return (
     <Collections>
-      <div className="collection-cards">
-        <div className="collection">
-          <GatsbyImage image={image_1} alt="box gifts" />
-          <div className="overlay">
-            <h3 className="text">Personalised boxes</h3>
+      <ImageLayout>
+        <div className="collection-cards">
+          <div className="collection">
+            <GatsbyImage image={image_1} alt="box gifts" />
+            <div className="overlay">
+              <h3 className="text">Personalised boxes</h3>
+            </div>
+          </div>
+          <div className="collection">
+            <GatsbyImage image={image_2} alt="seasonal gifts" />
+            <div className="overlay">
+              <h3 className="text">Seasonal & Custom Made Presents</h3>
+            </div>
+          </div>
+          <div className="collection">
+            <GatsbyImage image={image_3} alt="picture frames" />
+            <div className="overlay">
+              <h3 className="text">Picture Frames</h3>
+            </div>
+          </div>
+          <div className="collection">
+            <GatsbyImage image={image_4} alt="Personalised Gifts" />
+            <div className="overlay">
+              <h3 className="text">Personalised Gifts</h3>
+            </div>
           </div>
         </div>
-        <div className="collection">
-          <GatsbyImage image={image_2} alt="seasonal gifts" />
-          <div className="overlay">
-            <h3 className="text">Seasonal & Custom Made Presents</h3>
-          </div>
-        </div>
-        <div className="collection">
-          <GatsbyImage image={image_3} alt="picture frames" />
-          <div className="overlay">
-            <h3 className="text">Picture Frames</h3>
-          </div>
-        </div>
-        <div className="collection">
-          <GatsbyImage image={image_4} alt="Personalised Gifts" />
-          <div className="overlay">
-            <h3 className="text">Personalised Gifts</h3>
-          </div>
-        </div>
-      </div>
+      </ImageLayout>
     </Collections>
   );
 };
@@ -93,50 +96,29 @@ const Collections = styled.section`
   margin: auto;
   text-align: center;
 
-  .collection-cards {
-    display: inline-grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    display: grid;
 
-    .collection {
-      margin: auto;
-      position: relative;
-      cursor: pointer;
-      margin: 0.5rem;
-
-      .overlay {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        background-color: rgba(0, 0, 0, 0.5);
-        cursor: pointer;
-        display: grid;
-
-        &:hover {
-          opacity: 0;
-          transition: 300ms;
-        }
-
-        .text {
-          color: var(--main-white);
-          font-weight: normal;
-          margin: auto;
-          width: 80%;
-          text-align: center;
-          text-transform: uppercase;
-          line-height: 2rem;
-          font-family: var(--main-font);
-        }
-      }
+    &:hover {
+      opacity: 0;
+      transition: 300ms;
     }
-  }
-  @media screen and (max-width: 768px) {
-    .collection-cards {
-      grid-template-columns: 1fr;
-      .collection {
-        margin-top: 1rem;
-      }
+
+    .text {
+      color: var(--main-white);
+      font-weight: normal;
+      margin: auto;
+      width: 80%;
+      text-align: center;
+      text-transform: uppercase;
+      line-height: 2rem;
+      font-family: var(--main-font);
     }
   }
 `;

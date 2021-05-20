@@ -29,7 +29,6 @@ const Navbar = () => {
 const NavItems = styled.nav`
   max-width: 1170px;
   margin: auto;
-  background-color: ${({ path }) => (path === "/" ? "#fff" : "#000")};
 
   ul {
     text-align: center;
