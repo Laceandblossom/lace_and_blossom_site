@@ -11,6 +11,8 @@ const SocialShowcase = () => {
           src={brandText}
           alt="Lace and Blossom text"
           className="brand-text"
+          height="fit-content"
+          width="fit-content"
         />
         <div className="text">
           <h4>Contact and follow me on Instagram:</h4>
@@ -23,7 +25,13 @@ const SocialShowcase = () => {
           </h4>
         </div>
       </div>
-      <img src={gram} alt="Instagram logo" className="gram-logo" />
+      <img
+        src={gram}
+        alt="Instagram logo"
+        className="gram-logo"
+        height="fit-content"
+        width="fit-content"
+      />
     </Social>
   );
 };

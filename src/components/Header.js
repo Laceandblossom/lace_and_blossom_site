@@ -10,7 +10,12 @@ const Header = ({ path }) => {
       <div className="header-container">
         <div className="logo">
           <Link to="/">
-            <img src={logo} alt="brand logo" />
+            <img
+              src={logo}
+              alt="brand logo"
+              height="fit-content"
+              width="fit-content"
+            />
           </Link>
         </div>
         <div

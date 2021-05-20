@@ -6,7 +6,13 @@ import NavbarLinks from "../components/NavbarLinks";
 const Footer = () => {
   return (
     <Wrapper>
-      <img src={logo} alt="brand logo" className="logo" />
+      <img
+        src={logo}
+        alt="brand logo"
+        className="logo"
+        height="fit-content"
+        width="fit-content"
+      />
       <div className="nav-links">
         <NavbarLinks />
       </div>
