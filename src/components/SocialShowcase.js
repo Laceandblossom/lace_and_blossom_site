@@ -18,7 +18,11 @@ const SocialShowcase = () => {
           <h4>Contact and follow me on Instagram:</h4>
           <h4>
             <strong>
-              <a href="https://www.instagram.com/laceandblossom_/?hl=en">
+              <a
+                href="https://www.instagram.com/laceandblossom_/?hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 @laceandblossom_
               </a>
             </strong>

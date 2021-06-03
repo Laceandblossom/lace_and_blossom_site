@@ -8,15 +8,19 @@ import { ImageLayout } from "../components/styles/GridLayout";
 
 const query = graphql`
   {
-    allFile(filter: { relativeDirectory: { eq: "new-arivals" } }) {
+    allStrapiNewArrivals {
       nodes {
-        childImageSharp {
-          gatsbyImageData(
-            layout: CONSTRAINED
-            placeholder: BLURRED
-            width: 400
-            height: 400
-          )
+        images {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                placeholder: BLURRED
+                layout: CONSTRAINED
+                height: 400
+                width: 400
+              )
+            }
+          }
         }
       }
     }
@@ -25,24 +29,25 @@ const query = graphql`
 
 const FeatureProducts = () => {
   const data = useStaticQuery(query);
-  const nodes = data.allFile.nodes;
-
+  const nodes = data.allStrapiNewArrivals.nodes;
   return (
     <div>
       <SubTitle>New Arrivals</SubTitle>
       <ImageLayout>
         <div>
           <div className="collection-cards">
-            {nodes.map((image, index) => {
-              const pathToImage = getImage(image);
-              return (
-                <GatsbyImage
-                  image={pathToImage}
-                  alt="hello"
-                  key={index}
-                  className="collection"
-                />
-              );
+            {nodes.map((node) => {
+              return node.images.map((image, index) => {
+                const pathToImage = getImage(image.localFile);
+                return (
+                  <GatsbyImage
+                    image={pathToImage}
+                    alt=""
+                    key={index}
+                    className="collection"
+                  />
+                );
+              });
             })}
           </div>
         </div>

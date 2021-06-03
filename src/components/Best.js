@@ -8,15 +8,19 @@ import { ImageLayout } from "./styles/GridLayout";
 
 const query = graphql`
   {
-    allFile(filter: { relativeDirectory: { eq: "best-sellers" } }) {
+    allStrapiBestSellers {
       nodes {
-        childImageSharp {
-          gatsbyImageData(
-            width: 400
-            layout: CONSTRAINED
-            height: 400
-            placeholder: BLURRED
-          )
+        images {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 400
+                height: 400
+                placeholder: BLURRED
+                layout: CONSTRAINED
+              )
+            }
+          }
         }
       }
     }
@@ -25,21 +29,24 @@ const query = graphql`
 
 const Best = () => {
   const data = useStaticQuery(query);
-  const items = data.allFile.nodes;
+  const nodes = data.allStrapiBestSellers.nodes;
 
   return (
     <BestOf>
       <ImageLayout>
         <div className="collection-cards">
-          {items.map((item, index) => {
-            return (
-              <GatsbyImage
-                image={getImage(item.childImageSharp.gatsbyImageData)}
-                key={index}
-                alt="box gifts"
-                className="collection"
-              />
-            );
+          {nodes.map((node) => {
+            return node.images.map((image, index) => {
+              const pathToImage = getImage(image.localFile);
+              return (
+                <GatsbyImage
+                  image={pathToImage}
+                  alt=""
+                  key={index}
+                  className="collection"
+                />
+              );
+            });
           })}
         </div>
       </ImageLayout>

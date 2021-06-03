@@ -1,50 +1,27 @@
 import React from "react";
 import styled from "styled-components";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery, Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { ImageLayout } from "../components/styles/GridLayout";
 
 const query = graphql`
   {
-    boxes: file(relativePath: { eq: "collections/boxes.png" }) {
-      childImageSharp {
-        gatsbyImageData(
-          height: 400
-          width: 400
-          layout: CONSTRAINED
-          placeholder: BLURRED
-        )
-      }
-    }
-
-    seasonal: file(relativePath: { eq: "collections/seasonal.png" }) {
-      childImageSharp {
-        gatsbyImageData(
-          height: 400
-          width: 400
-          layout: CONSTRAINED
-          placeholder: BLURRED
-        )
-      }
-    }
-    frame: file(relativePath: { eq: "collections/picture-frame.png" }) {
-      childImageSharp {
-        gatsbyImageData(
-          height: 400
-          width: 400
-          layout: CONSTRAINED
-          placeholder: BLURRED
-        )
-      }
-    }
-    personal: file(relativePath: { eq: "collections/personal-gifts.png" }) {
-      childImageSharp {
-        gatsbyImageData(
-          height: 400
-          width: 400
-          layout: CONSTRAINED
-          placeholder: BLURRED
-        )
+    allStrapiProductCollections {
+      nodes {
+        Slug
+        collection_name
+        collection_image {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 400
+                layout: CONSTRAINED
+                placeholder: BLURRED
+                height: 400
+              )
+            }
+          }
+        }
       }
     }
   }
@@ -52,39 +29,29 @@ const query = graphql`
 
 const ProductCollections = () => {
   const data = useStaticQuery(query);
-  const image_1 = getImage(data.boxes);
-  const image_2 = getImage(data.seasonal);
-  const image_3 = getImage(data.frame);
-  const image_4 = getImage(data.personal);
+  const nodes = data.allStrapiProductCollections.nodes;
+
+  // console.log(nodes);
 
   return (
     <Collections>
       <ImageLayout>
         <div className="collection-cards">
-          <div className="collection">
-            <GatsbyImage image={image_1} alt="box gifts" />
-            <div className="overlay">
-              <h3 className="text">Personalised boxes</h3>
-            </div>
-          </div>
-          <div className="collection">
-            <GatsbyImage image={image_2} alt="seasonal gifts" />
-            <div className="overlay">
-              <h3 className="text">Seasonal & Custom Made Presents</h3>
-            </div>
-          </div>
-          <div className="collection">
-            <GatsbyImage image={image_3} alt="picture frames" />
-            <div className="overlay">
-              <h3 className="text">Picture Frames</h3>
-            </div>
-          </div>
-          <div className="collection">
-            <GatsbyImage image={image_4} alt="Personalised Gifts" />
-            <div className="overlay">
-              <h3 className="text">Personalised Gifts</h3>
-            </div>
-          </div>
+          {nodes.map((node) => {
+            return node.collection_image.map((image, index) => {
+              const pathToImage = getImage(image.localFile);
+              return (
+                <div className="collection" key={index}>
+                  <Link to={`/collections/${node.Slug}`}>
+                    <GatsbyImage image={pathToImage} alt="" />
+                    <div className="overlay">
+                      <h3 className="text">{node.collection_name}</h3>
+                    </div>
+                  </Link>
+                </div>
+              );
+            });
+          })}
         </div>
       </ImageLayout>
     </Collections>

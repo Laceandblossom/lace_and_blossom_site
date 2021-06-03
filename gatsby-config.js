@@ -16,19 +16,14 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-scroll-reveal`,
     {
-      resolve: `gatsby-source-sanity`,
+      resolve: `gatsby-source-strapi`,
       options: {
-        projectId: `hv30xde8`,
-        dataset: `production`,
-        // a token with read permissions is required
-        // if you have a private dataset
-        token: process.env.SANITY_TOKEN,
-
-        // If the Sanity GraphQL API was deployed using `--tag <name>`,
-        // use `graphqlTag` to specify the tag name. Defaults to `default`.
-        graphqlTag: "default",
+        apiURL: `http://localhost:1337`,
+        collectionTypes: [`product-collections`, `reviews`],
+        singleTypes: [`about-me`, `best-sellers`, `hero-image`, `new-arrivals`],
       },
     },
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
