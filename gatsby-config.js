@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env`,
+});
+
 module.exports = {
   siteMetadata: {
     title: "lace-and-blossom",
@@ -18,7 +22,7 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: `http://localhost:1337`,
+        apiURL: process.env.API_URL || "http://localhost:1337",
         collectionTypes: [`product-collections`, `reviews`],
         singleTypes: [`about-me`, `best-sellers`, `hero-image`, `new-arrivals`],
       },
