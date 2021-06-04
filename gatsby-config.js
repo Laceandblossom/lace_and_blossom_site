@@ -3,6 +3,10 @@ require("dotenv").config({
 });
 
 module.exports = {
+  flags: {
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    PRESERVE_WEBPACK_CACHE: true,
+  },
   siteMetadata: {
     title: "lace-and-blossom",
     description: `hand crafted presents for every occasion`,
