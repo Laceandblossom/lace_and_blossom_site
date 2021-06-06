@@ -20,7 +20,6 @@ export const ImageLayout = styled.div`
         width: 100%;
         height: 100%;
         position: absolute;
-        top: 0;
         background-color: rgba(0, 0, 0, 0.5);
         cursor: pointer;
         display: grid;
@@ -34,7 +33,12 @@ export const ImageLayout = styled.div`
           color: var(--main-white);
           font-weight: normal;
           margin: auto;
-          width: 80%;
+          height: fit-content;
+          /* background-color: red; */
+          position: absolute;
+          width: 100%;
+          top: 47%;
+
           text-align: center;
           text-transform: uppercase;
           line-height: 2rem;
@@ -50,7 +54,7 @@ export const ImageLayout = styled.div`
     }
     .text {
       width: 95%;
-      font-size: 140%;
+      font-size: 160%;
     }
   }
 `;
