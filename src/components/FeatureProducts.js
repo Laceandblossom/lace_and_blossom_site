@@ -27,7 +27,7 @@ const query = graphql`
   }
 `;
 
-const FeatureProducts = () => {
+const FeatureProducts = (props) => {
   const data = useStaticQuery(query);
   const nodes = data.allStrapiNewArrivals.nodes;
   return (

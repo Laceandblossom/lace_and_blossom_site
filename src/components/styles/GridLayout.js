@@ -17,10 +17,8 @@ export const ImageLayout = styled.div`
       margin: 0.5rem;
 
       .overlay {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
+        /* position: absolute; */
+        /* top: 0; */
         background-color: rgba(0, 0, 0, 0.5);
         cursor: pointer;
         display: grid;

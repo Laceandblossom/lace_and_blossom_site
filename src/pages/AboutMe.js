@@ -3,23 +3,25 @@ import Layout from "../components/Layout";
 import { PageHeading } from "../components/styles/Styles";
 import styled from "styled-components";
 import { graphql } from "gatsby";
+import ReactMarkdown from "react-markdown";
 
 export const query = graphql`
   {
     strapiAboutMe {
       Title
-      text
+      info_text
     }
   }
 `;
 
 const AboutMe = ({ data }) => {
-  console.log(data);
   return (
     <Layout>
       <About>
         <PageHeading>{data.strapiAboutMe.Title}</PageHeading>
-        <p>{data.strapiAboutMe.text}</p>
+        <div className="text">
+          <ReactMarkdown children={data.strapiAboutMe.info_text} />
+        </div>
       </About>
     </Layout>
   );
@@ -27,13 +29,13 @@ const AboutMe = ({ data }) => {
 
 const About = styled.section`
   margin: 3rem;
-  p {
+  .text {
     width: 65vw;
     margin: auto;
     padding: 1rem;
   }
   @media screen and (max-width: 768px) {
-    p {
+    .text {
       width: 80vw;
     }
   }
@@ -43,7 +45,7 @@ const About = styled.section`
     margin-top: 3rem;
     padding: 1rem;
 
-    p {
+    .text {
       width: 95vw;
       margin: auto;
     }

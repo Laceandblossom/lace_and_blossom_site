@@ -8,7 +8,7 @@ module.exports = {
     PRESERVE_WEBPACK_CACHE: true,
   },
   siteMetadata: {
-    title: "lace-and-blossom",
+    title: "lace and blossom",
     description: `hand crafted presents for every occasion`,
     siteUrl: `https://laceandblossom.netlify.app`,
   },
@@ -23,6 +23,7 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-scroll-reveal`,
+
     {
       resolve: `gatsby-source-strapi`,
       options: {
@@ -50,5 +51,6 @@ module.exports = {
       },
       __key: "images",
     },
+    `gatsby-transformer-remark`,
   ],
 };
