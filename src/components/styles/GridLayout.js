@@ -13,7 +13,6 @@ export const ImageLayout = styled.div`
     .collection {
       margin: auto;
       position: relative;
-      cursor: pointer;
       margin: 0.5rem;
 
       .overlay {

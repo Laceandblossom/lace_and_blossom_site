@@ -65,6 +65,8 @@ const Social = styled.section`
         }
         &:hover {
           text-decoration: underline;
+          font-weight: 900;
+          text-shadow: 0.5px 0.5px 2px gray;
         }
         &:active {
           text-decoration: underline;
