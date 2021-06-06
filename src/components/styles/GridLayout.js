@@ -17,8 +17,10 @@ export const ImageLayout = styled.div`
       margin: 0.5rem;
 
       .overlay {
-        /* position: absolute; */
-        /* top: 0; */
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
         background-color: rgba(0, 0, 0, 0.5);
         cursor: pointer;
         display: grid;
@@ -45,6 +47,10 @@ export const ImageLayout = styled.div`
   @media screen and (max-width: 501px) {
     .collection-cards {
       grid-template-columns: 1fr;
+    }
+    .text {
+      width: 95%;
+      font-size: 140%;
     }
   }
 `;

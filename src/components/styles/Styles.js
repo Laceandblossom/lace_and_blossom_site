@@ -36,4 +36,7 @@ export const SubTitle = styled.h3`
       text-decoration: none;
     }
   }
+  @media (max-width: 501px) {
+    text-align: center;
+  }
 `;
